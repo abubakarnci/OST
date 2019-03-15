@@ -17,7 +17,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Select Any one"
+        android:text="Select Anyone"
         android:textColor="@color/colorAccent"
         android:textSize="45sp"
         android:textStyle="bold|italic"
