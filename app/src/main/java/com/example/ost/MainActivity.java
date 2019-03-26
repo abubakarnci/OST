@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent startIntent=new Intent(getApplicationContext(),Home.class);
                 startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","Select Anyone");
                 startActivity(startIntent);
-
+            //Test Jay
 
             }
         });
