@@ -11,6 +11,7 @@ public class Luas extends AppCompatActivity {
         Log.i("Info", "addToFav Button Pressed");
 
     }
+    
 
     public void menuIcon(View view){
         Log.i("Info", "MenuIcon Pressed");
