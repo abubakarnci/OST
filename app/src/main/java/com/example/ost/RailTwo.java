@@ -44,9 +44,9 @@ public class RailTwo extends AppCompatActivity   {
 
 
         if (getIntent().hasExtra("com.example.ost.SOMETHING")) {
-            //TextView oneTV=(TextView)findViewById(R.id.oneTV);
+
             String input = getIntent().getExtras().getString("com.example.ost.SOMETHING");
-            //infoTV.setText(input);
+
 
 
 
