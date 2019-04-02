@@ -55,10 +55,7 @@
         android:layout_marginBottom="208dp"
         android:background="@null"
         android:onClick="menuIcon"
-        app:layout_constraintBottom_toTopOf="@+id/redLineBtn"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
         app:srcCompat="@drawable/mobile_menu_icon" />
 
     <TextView
