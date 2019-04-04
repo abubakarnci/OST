@@ -20,8 +20,8 @@ public class Bike extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), RailTwo.class);
-                String input=searchTF.getText().toString();
+                Intent startIntent = new Intent(getApplicationContext(), BikeTwo.class);
+                int input= (int) Integer.parseInt(String.valueOf(searchTF.getText()));
                 startIntent.putExtra("com.example.ost.SOMETHING", input);
                 startActivity(startIntent);
             }
