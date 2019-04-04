@@ -69,9 +69,9 @@ public class BikeTwo extends AppCompatActivity {
 
 
                     } else {
-                        final TextView infoTV=(TextView) findViewById(R.id.infoTV);
+                        final TextView bikeTV=(TextView) findViewById(R.id.bikeTV);
 
-                        infoTV.setText("Something wrong. Please try again");
+                        bikeTV.setText("Something wrong. Please try again");
 
 
                     }
@@ -103,6 +103,7 @@ public class BikeTwo extends AppCompatActivity {
                         try {
                             final TextView bikeTV=(TextView) findViewById(R.id.bikeTV);
                             final TextView subTV=(TextView) findViewById(R.id.subTV);
+                            final TextView infoTV=(TextView) findViewById(R.id.infoTV);
                             int number=response.getInt("number");
                             int tStands=response.getInt("bike_stands");
                             int aStands=response.getInt("available_bike_stands");
@@ -111,7 +112,8 @@ public class BikeTwo extends AppCompatActivity {
                             boolean banking=response.getBoolean("banking");
                             String status=response.getString("status");
 
-                            subTV.setText("Total Stands  Available Stands  Available Bikes");
+                            subTV.setText(" Total Stands  Available Stands  Available Bikes");
+                            infoTV.setText("  "+tStands+"                "+aStands+"                  "+aBikes);
                             bikeTV.setText("Stop Number: "+number+"\nStop Name: "+name+"\nStatus: "+status+"\nBanking Available: "+banking);
 
 
