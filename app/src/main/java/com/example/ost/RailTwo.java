@@ -112,7 +112,7 @@ public class RailTwo extends AppCompatActivity   {
                             String code=info.getString("Stationcode");
                             String date=info.getString("Traindate");
                             infoTV.setText("Data Refreshed: "+time+"\n\n"+"Date: "+date+"\n\n"+"Station Name: "+station+"\n\n"+"Station Code: "+code+"\n\n");
-                            trainTV.setText("\n Code   Origin  Destination Arrival Depart");
+                            trainTV.setText("\n Code    Origin  Destination Arrival Depart");
                             outputTV.setText("");
                             for(int i =0; i< array.length();i++){
 

@@ -55,16 +55,6 @@ public class BikeTwo extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
 
-                       /* final String myres=response.body().string();
-
-                        BikeTwo.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                final TextView infoTV=(TextView) findViewById(R.id.infoTV);
-                                infoTV.setText(myres);
-                            }
-                        });*/
-
                         jsonParse();
 
 
