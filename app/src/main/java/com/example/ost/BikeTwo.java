@@ -105,7 +105,9 @@ public class BikeTwo extends AppCompatActivity {
                             final TextView infoTV=(TextView) findViewById(R.id.infoTV);
                             int number=response.getInt("number");
                             String name=response.getString("name");
-                            bikeTV.setText("Stop Number: "+number+"\n"+ "Stop Name: "+name);
+                            boolean banking=response.getBoolean("banking");
+                            String status=response.getString("status");
+                            bikeTV.setText("Stop Number: "+number+"\nStop Name: "+name+"\nStatus: "+status+"\nBanking Available: "+banking);
 
 
 
