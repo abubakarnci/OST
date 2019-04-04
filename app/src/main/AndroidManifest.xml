@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Rail"></activity>
+        <activity
+            android:name=".LuasGreen"
+            android:label="@string/title_activity_luas_green" />
+        <activity android:name=".LuasRed" />
+        <activity android:name=".Rail" />
         <activity android:name=".Bike" />
         <activity android:name=".Luas" />
         <activity android:name=".Bus" />
