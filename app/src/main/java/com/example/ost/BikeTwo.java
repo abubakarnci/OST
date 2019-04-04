@@ -102,11 +102,16 @@ public class BikeTwo extends AppCompatActivity {
 
                         try {
                             final TextView bikeTV=(TextView) findViewById(R.id.bikeTV);
-                            final TextView infoTV=(TextView) findViewById(R.id.infoTV);
+                            final TextView subTV=(TextView) findViewById(R.id.subTV);
                             int number=response.getInt("number");
+                            int tStands=response.getInt("bike_stands");
+                            int aStands=response.getInt("available_bike_stands");
+                            int aBikes=response.getInt("available_bikes");
                             String name=response.getString("name");
                             boolean banking=response.getBoolean("banking");
                             String status=response.getString("status");
+
+                            subTV.setText("Total Stands  Available Stands  Available Bikes");
                             bikeTV.setText("Stop Number: "+number+"\nStop Name: "+name+"\nStatus: "+status+"\nBanking Available: "+banking);
 
 
