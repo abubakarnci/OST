@@ -2,12 +2,6 @@ package com.example.ost;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -20,7 +14,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -40,11 +33,13 @@ public class RailTwo extends AppCompatActivity   {
         final OkHttpClient clint = new OkHttpClient();
         mQueue = Volley.newRequestQueue(this);
         final TextView infoTV = (TextView) findViewById(R.id.infoTV);
+        final TextView topTV = (TextView) findViewById(R.id.topTV);
 
 
 
         if (getIntent().hasExtra("com.example.ost.SOMETHING")) {
 
+            topTV.setText("Loading");
             String input = getIntent().getExtras().getString("com.example.ost.SOMETHING");
 
 
@@ -66,12 +61,13 @@ public class RailTwo extends AppCompatActivity   {
 
                 if (response.isSuccessful()) {
 
+
                     jsonParse();
 
 
 
                 } else {
-
+                    topTV.setText("          Irish Rail");
                     infoTV.setText("Something wrong. Please try again");
 
 
@@ -106,10 +102,11 @@ public class RailTwo extends AppCompatActivity   {
 
 
 
-                            final TextView trainTV=(TextView) findViewById(R.id.trainTV);
+                            final TextView trainTV=(TextView) findViewById(R.id.bikeTV);
                             final TextView infoTV=(TextView) findViewById(R.id.infoTV);
                             final TextView outputTV=(TextView) findViewById(R.id.outputTV);
-
+                            final TextView topTV = (TextView) findViewById(R.id.topTV);
+                            topTV.setText("          Irish Rail");
                             trainTV.setText("");
                             JSONArray array = response.getJSONArray("objStationData");
 
@@ -119,7 +116,7 @@ public class RailTwo extends AppCompatActivity   {
                             String code=info.getString("Stationcode");
                             String date=info.getString("Traindate");
                             infoTV.setText("Data Refreshed: "+time+"\n\n"+"Date: "+date+"\n\n"+"Station Name: "+station+"\n\n"+"Station Code: "+code+"\n\n");
-                            trainTV.setText("\n Code   Origin  Destination Arrival Depart");
+                            trainTV.setText("\n Code    Origin  Destination Arrival Depart");
                             outputTV.setText("");
                             for(int i =0; i< array.length();i++){
 

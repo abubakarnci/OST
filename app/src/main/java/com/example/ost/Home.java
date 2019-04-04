@@ -95,7 +95,7 @@ public class Home extends AppCompatActivity {
         if(getIntent().hasExtra("org.metorschools.quicklauncher.SOMETHING")){
             TextView oneTV=(TextView)findViewById(R.id.oneTV);
             String text=getIntent().getExtras().getString("org.metorschools.quicklauncher.SOMETHING");
-            oneTV.setText(text);
+
         }
     }
 }
