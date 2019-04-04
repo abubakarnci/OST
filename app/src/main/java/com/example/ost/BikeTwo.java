@@ -30,6 +30,8 @@ public class BikeTwo extends AppCompatActivity {
         setContentView(R.layout.activity_bike_two);
         final OkHttpClient clint = new OkHttpClient();
         mQueue = Volley.newRequestQueue(this);
+        final TextView bikeTV=(TextView) findViewById(R.id.bikeTV);
+        final TextView headTV=(TextView) findViewById(R.id.headTV);
 
 
 
@@ -37,6 +39,7 @@ public class BikeTwo extends AppCompatActivity {
 
         if (getIntent().hasExtra("com.example.ost.SOMETHING")) {
 
+            headTV.setText("Loading");
             String input=getIntent().getExtras().getString("com.example.ost.SOMETHING");
             final String url = "https://api.jcdecaux.com/vls/v1/stations/"+input+"?contract=dublin&apiKey=71ad3cfc15ee4188cb493ea4977da1dd242e94dd";
 
@@ -59,8 +62,7 @@ public class BikeTwo extends AppCompatActivity {
 
 
                     } else {
-                        final TextView bikeTV=(TextView) findViewById(R.id.bikeTV);
-
+                        headTV.setText("        Dublin Bikes");
                         bikeTV.setText("Something wrong. Please try again");
 
 
@@ -94,6 +96,8 @@ public class BikeTwo extends AppCompatActivity {
                             final TextView bikeTV=(TextView) findViewById(R.id.bikeTV);
                             final TextView subTV=(TextView) findViewById(R.id.subTV);
                             final TextView infoTV=(TextView) findViewById(R.id.infoTV);
+                            final TextView headTV=(TextView) findViewById(R.id.headTV);
+                            headTV.setText("        Dublin Bikes");
                             int number=response.getInt("number");
                             int tStands=response.getInt("bike_stands");
                             int aStands=response.getInt("available_bike_stands");

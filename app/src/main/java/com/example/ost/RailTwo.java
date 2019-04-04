@@ -33,11 +33,13 @@ public class RailTwo extends AppCompatActivity   {
         final OkHttpClient clint = new OkHttpClient();
         mQueue = Volley.newRequestQueue(this);
         final TextView infoTV = (TextView) findViewById(R.id.infoTV);
+        final TextView topTV = (TextView) findViewById(R.id.topTV);
 
 
 
         if (getIntent().hasExtra("com.example.ost.SOMETHING")) {
 
+            topTV.setText("Loading");
             String input = getIntent().getExtras().getString("com.example.ost.SOMETHING");
 
 
@@ -59,12 +61,13 @@ public class RailTwo extends AppCompatActivity   {
 
                 if (response.isSuccessful()) {
 
+
                     jsonParse();
 
 
 
                 } else {
-
+                    topTV.setText("          Irish Rail");
                     infoTV.setText("Something wrong. Please try again");
 
 
@@ -102,7 +105,8 @@ public class RailTwo extends AppCompatActivity   {
                             final TextView trainTV=(TextView) findViewById(R.id.bikeTV);
                             final TextView infoTV=(TextView) findViewById(R.id.infoTV);
                             final TextView outputTV=(TextView) findViewById(R.id.outputTV);
-
+                            final TextView topTV = (TextView) findViewById(R.id.topTV);
+                            topTV.setText("          Irish Rail");
                             trainTV.setText("");
                             JSONArray array = response.getJSONArray("objStationData");
 
