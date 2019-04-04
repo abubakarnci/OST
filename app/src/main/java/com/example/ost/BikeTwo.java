@@ -5,7 +5,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -24,19 +30,15 @@ public class BikeTwo extends AppCompatActivity {
         setContentView(R.layout.activity_bike_two);
         final OkHttpClient clint = new OkHttpClient();
         mQueue = Volley.newRequestQueue(this);
-        final TextView infoTV = (TextView) findViewById(R.id.infoTV);
+
 
 
 
 
         if (getIntent().hasExtra("com.example.ost.SOMETHING")) {
 
-            int input = Integer.parseInt(getIntent().getExtras().getString("com.example.ost.SOMETHING"));
-
-
-
-
-            String url = "https://api.jcdecaux.com/vls/v1/stations/"+input+"?contract=dublin&apiKey=71ad3cfc15ee4188cb493ea4977da1dd242e94dd";
+            String input=getIntent().getExtras().getString("com.example.ost.SOMETHING");
+            final String url = "https://api.jcdecaux.com/vls/v1/stations/"+input+"?contract=dublin&apiKey=71ad3cfc15ee4188cb493ea4977da1dd242e94dd";
 
 
             Request request = new Request.Builder()
@@ -53,11 +55,21 @@ public class BikeTwo extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
 
-                        //jsonParse();
+                       /* final String myres=response.body().string();
 
+                        BikeTwo.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                final TextView infoTV=(TextView) findViewById(R.id.infoTV);
+                                infoTV.setText(myres);
+                            }
+                        });*/
+
+                        jsonParse();
 
 
                     } else {
+                        final TextView infoTV=(TextView) findViewById(R.id.infoTV);
 
                         infoTV.setText("Something wrong. Please try again");
 
@@ -71,4 +83,61 @@ public class BikeTwo extends AppCompatActivity {
 
 
     }
+
+
+
+
+    private void jsonParse() {
+
+        String input=getIntent().getExtras().getString("com.example.ost.SOMETHING");
+        final String url = "https://api.jcdecaux.com/vls/v1/stations/"+input+"?contract=dublin&apiKey=71ad3cfc15ee4188cb493ea4977da1dd242e94dd";
+
+
+
+        JsonObjectRequest request = new JsonObjectRequest(com.android.volley.Request.Method.GET, url, null,
+
+                new com.android.volley.Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        try {
+                            final TextView bikeTV=(TextView) findViewById(R.id.bikeTV);
+                            final TextView infoTV=(TextView) findViewById(R.id.infoTV);
+                            int number=response.getInt("number");
+                            String name=response.getString("name");
+                            bikeTV.setText("Stop Number: "+number+"\n"+ "Stop Name: "+name);
+
+
+
+
+
+
+
+
+
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                , new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        });
+
+        mQueue.add(request);
+
+
+
+
+    }
+
+
+
 }
