@@ -11,12 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Bus2"></activity>
+
         <activity android:name=".BikeTwo" />
         <activity android:name=".RailTwo" />
         <activity android:name=".Rail" />
         <activity android:name=".Bike" />
-        <activity android:name=".Luas" />
+
         <activity android:name=".Bus" />
         <activity android:name=".Home" />
         <activity android:name=".MainActivity">

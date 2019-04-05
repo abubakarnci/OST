@@ -32,7 +32,7 @@ public class Bus extends AppCompatActivity {
             }
         });
         */
-        Button seaBtn =(Button) findViewById(R.id.seaBtn);
+       /*Button seaBtn =(Button) findViewById(R.id.seaBtn);
         seaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +40,7 @@ public class Bus extends AppCompatActivity {
                 startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","");
                 startActivity(startIntent);
             }
-        });
+        });*/
 
 
 
