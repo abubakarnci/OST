@@ -19,4 +19,20 @@
 
     </string-array>
 
+    <string-array name="red">
+        <item>Click me !</item>
+        <item>Tallaght</item>
+        <item>Saggart</item>
+        <item>Citywest</item>
+        <item>Belgard</item>
+        <item>Kingswood</item>
+        <item>Bluebell</item>
+        <item>Fatima</item>
+        <item>Heuston</item>
+        <item>Jervis</item>
+        <item>NCI</item>
+        <item>ThePoint</item>
+
+    </string-array>
+
 </resources>
