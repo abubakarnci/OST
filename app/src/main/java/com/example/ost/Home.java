@@ -61,7 +61,7 @@ public class Home extends AppCompatActivity {
         });
 
         //Luas button
-        /*ImageButton luasBtn =(ImageButton) findViewById(R.id.luasBtn);
+        ImageButton luasBtn =(ImageButton) findViewById(R.id.luasBtn);
         luasBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -72,7 +72,7 @@ public class Home extends AppCompatActivity {
 
 
             }
-        });*/
+        });
 
         ImageButton tfiBtn = (ImageButton) findViewById(R.id.tfiBtn);
         tfiBtn.setOnClickListener(new View.OnClickListener() {
