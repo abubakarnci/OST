@@ -3,4 +3,11 @@
     <string name="title_activity_luas_green">LuasGreen</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_luas_fav">LuasFav</string>
+    <string-array name="green">
+        <item>Click me !</item>
+        <item>Broombridge</item>
+        <item>Cabra</item>
+
+    </string-array>
+
 </resources>
