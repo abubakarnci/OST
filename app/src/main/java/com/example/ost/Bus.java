@@ -18,6 +18,7 @@ public class Bus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus);
         //Hi
+        /*
         Button seaBtn=(Button) findViewById(R.id.seaBtn);
         seaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,20 @@ public class Bus extends AppCompatActivity {
                 },5000);
             }
         });
+        */
+        Button seaBtn =(Button) findViewById(R.id.seaBtn);
+        seaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent=new Intent(getApplicationContext(), Bus2.class);
+                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","");
+                startActivity(startIntent);
+            }
+        });
+
+
+
+
 
         ImageButton tfiBtn=(ImageButton) findViewById(R.id.tfiBtn);
         tfiBtn.setOnClickListener(new View.OnClickListener() {
