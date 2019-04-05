@@ -40,4 +40,16 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/footer_bar" />
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="55dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.38"
+        app:srcCompat="@drawable/drop_down_icon" />
+
 </android.support.constraint.ConstraintLayout>
