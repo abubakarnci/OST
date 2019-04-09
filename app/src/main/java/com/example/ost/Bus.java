@@ -70,6 +70,7 @@ public class Bus extends AppCompatActivity {
         });
 
     /*
+    How we can get information from Dublin Bus API if API works.
         final OkHttpClient clint = new OkHttpClient();
         queue = Volley.newRequestQueue(this);
         final TextView title=(TextView) findViewById(R.id.title);
