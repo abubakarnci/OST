@@ -11,12 +11,29 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Bus extends AppCompatActivity {
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class Bus extends AppCompatActivity {
+    private RequestQueue queue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus);
+        /*String input=searchTf.getText().toString();*/
         //Hi
         /*
         Button seaBtn=(Button) findViewById(R.id.seaBtn);
@@ -32,15 +49,7 @@ public class Bus extends AppCompatActivity {
             }
         });
         */
-        Button seaBtn =(Button) findViewById(R.id.seaBtn);
-        seaBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startIntent=new Intent(getApplicationContext(), Bus2.class);
-                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","");
-                startActivity(startIntent);
-            }
-        });
+
 
 
 
@@ -50,7 +59,7 @@ public class Bus extends AppCompatActivity {
         tfiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String google="http://www.dublinbus.ie/";
+                String google="https://www.transportforireland.ie/";
                 Uri webaddress= Uri.parse(google);
                 Intent gotogoole=new Intent(Intent.ACTION_VIEW, webaddress);
                 if(gotogoole.resolveActivity(getPackageManager()) != null){
@@ -59,6 +68,81 @@ public class Bus extends AppCompatActivity {
 
             }
         });
+
+    /*
+        final OkHttpClient clint = new OkHttpClient();
+        queue = Volley.newRequestQueue(this);
+        final TextView title=(TextView) findViewById(R.id.title);
+        final TextView result=(TextView) findViewById(R.id.result);
+
+        if(getIntent().hasExtra("com.example.bus.SOMETHING")){
+            title.setText("Please Wait");
+            String input=getIntent().getExtras().getString("com.example.bus.SOMETHING");
+            final String url="https://data.smartdublin.ie/cgi-bin/rtpi/busstopinformation?"+input+"&format=json";
+            Request request=new Request.Builder()
+                    .url(url)
+                    .build();
+
+            clint.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                    e.printStackTrace();
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    if (response.isSuccessful()) {
+
+                        jsonParse();
+
+
+                    }
+                }
+            });
+
+
+
+        }
+
+    }
+    private void jsonParse() {
+
+        String input=getIntent().getExtras().getString("com.example.ost.SOMETHING");
+        final String url = "https://data.smartdublin.ie/cgi-bin/rtpi/busstopinformation?\"+input+\"&format=json";
+
+
+
+        JsonObjectRequest request = new JsonObjectRequest(com.android.volley.Request.Method.GET, url, null,
+
+                new com.android.volley.Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        try {
+                            final TextView title=(TextView) findViewById(R.id.title);
+                            final TextView result=(TextView) findViewById(R.id.result);
+                            String destination=response.getString("destination");
+
+
+                            result.setText("Bus Destination"+destination);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                , new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        });
+
+        queue.add(request);
+
+        */
 
     }
 }
