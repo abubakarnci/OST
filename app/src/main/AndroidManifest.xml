@@ -18,7 +18,6 @@
         <activity android:name=".RailTwo" />
         <activity android:name=".Rail" />
         <activity android:name=".Bike" />
-        <activity android:name=".Bus" />
         <activity android:name=".Home" />
         <activity android:name=".MainActivity">
             <intent-filter>
