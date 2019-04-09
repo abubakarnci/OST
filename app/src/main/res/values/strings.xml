@@ -3,4 +3,36 @@
     <string name="title_activity_luas_green">LuasGreen</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_luas_fav">LuasFav</string>
+    <string-array name="green">
+        <item>Click me !</item>
+        <item>Broombridge</item>
+        <item>Cabra</item>
+        <item>Grange</item>
+        <item>Dominick</item>
+        <item>Parnell</item>
+        <item>Phibsborough</item>
+        <item>DIT</item>
+        <item>Marlborough</item>
+        <item>Trinity</item>
+        <item>Harcourt</item>
+        <item>Dawson</item>
+
+    </string-array>
+
+    <string-array name="red">
+        <item>Click me !</item>
+        <item>Tallaght</item>
+        <item>Saggart</item>
+        <item>Citywest</item>
+        <item>Belgard</item>
+        <item>Kingswood</item>
+        <item>Bluebell</item>
+        <item>Fatima</item>
+        <item>Heuston</item>
+        <item>Jervis</item>
+        <item>NCI</item>
+        <item>ThePoint</item>
+
+    </string-array>
+
 </resources>
