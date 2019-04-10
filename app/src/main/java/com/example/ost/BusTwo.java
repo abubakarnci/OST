@@ -19,7 +19,7 @@ public class BusTwo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent=new Intent(getApplicationContext(), WebBus.class);
-                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","");
+                startIntent.putExtra("com.example.ost.SOMETHING","");
                 startActivity(startIntent);
             }
         });

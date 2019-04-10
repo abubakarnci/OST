@@ -35,7 +35,7 @@ public class Bus extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent=new Intent(getApplicationContext(), BusTwo.class);
-                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","");
+                startIntent.putExtra("com.example.ost.SOMETHING","");
                 startActivity(startIntent);
             }
         });
