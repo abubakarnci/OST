@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class Bus extends AppCompatActivity {
@@ -25,6 +26,17 @@ public class Bus extends AppCompatActivity {
                     startActivity(gotogoole);
                 }
 
+            }
+        });
+
+        //for moving to another activity Bus2
+        Button seaBtn =(Button) findViewById(R.id.seaBtn);
+        seaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent=new Intent(getApplicationContext(), BusTwo.class);
+                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","");
+                startActivity(startIntent);
             }
         });
 
