@@ -14,7 +14,7 @@
         android:top="7dp"
         />
     <solid android:color="#90d184"/>
-
+//for shape
     <gradient
         android:startColor="#4bd927"
         android:endColor="#28361d"
