@@ -4,25 +4,29 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Bus extends AppCompatActivity {
     //private RequestQueue queue;
+    Button seaBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus);
         //for footer_bar code
-        ImageButton tfiBtn=(ImageButton) findViewById(R.id.tfiBtn);
+        ImageButton tfiBtn = (ImageButton) findViewById(R.id.tfiBtn);
         tfiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String google="https://www.transportforireland.ie/";
-                Uri webaddress= Uri.parse(google);
-                Intent gotogoole=new Intent(Intent.ACTION_VIEW, webaddress);
-                if(gotogoole.resolveActivity(getPackageManager()) != null){
+                String google = "https://www.transportforireland.ie/";
+                Uri webaddress = Uri.parse(google);
+                Intent gotogoole = new Intent(Intent.ACTION_VIEW, webaddress);
+                if (gotogoole.resolveActivity(getPackageManager()) != null) {
                     startActivity(gotogoole);
                 }
 
@@ -30,29 +34,33 @@ public class Bus extends AppCompatActivity {
         });
 
         //for moving to another activity Bus2
-        Button seaBtn =(Button) findViewById(R.id.seaBtn);
+        Button seaBtn = (Button) findViewById(R.id.seaBtn);
         seaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent=new Intent(getApplicationContext(), BusTwo.class);
-                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING","");
+                Intent startIntent = new Intent(getApplicationContext(), BusTwo.class);
+                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING", "");
                 startActivity(startIntent);
+
+                showGreenToast();
+
+
             }
         });
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    }
+    //code to display custom toast
+    private void showGreenToast(){
+        LayoutInflater inflater=getLayoutInflater();
+        View view=inflater.inflate(R.layout.green_toast_item, null);
+        Toast toast=new Toast(this);
+        toast.setView(view);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP,0,150);
+        toast.show();
+    }
 
         /*
     How to get information from Dublin Bus API if API Works.
@@ -130,5 +138,5 @@ public class Bus extends AppCompatActivity {
 
         */
 
-    }
+
 }
