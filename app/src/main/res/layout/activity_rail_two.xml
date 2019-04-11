@@ -36,17 +36,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
         android:textSize="19sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoTV"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintTop_toBottomOf="@+id/infoTV" />
 
     <ImageView
         android:id="@+id/footer"
@@ -97,7 +94,7 @@
     <TextView
         android:id="@+id/outputTV"
         android:layout_width="392dp"
-        android:layout_height="326dp"
+        android:layout_height="285dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -108,9 +105,9 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bikeTV"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.906" />
 
 </android.support.constraint.ConstraintLayout>

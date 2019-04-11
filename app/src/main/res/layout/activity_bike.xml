@@ -10,7 +10,7 @@
 
     <EditText
         android:id="@+id/searchTF"
-        android:layout_width="344dp"
+        android:layout_width="262dp"
         android:layout_height="92dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -18,7 +18,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:hint="          Station Code"
+        android:hint="     Station Code"
         android:inputType="number"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
@@ -50,7 +50,7 @@
 
     <ImageView
         android:id="@+id/footer"
-        android:layout_width="413dp"
+        android:layout_width="399dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
