@@ -15,7 +15,7 @@ public class BusTwo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus_two);
 
-        //for moving to another activity Bus2
+        //for moving to another activity Web Bus
         ImageButton webBtn =(ImageButton) findViewById(R.id.webBtn);
         webBtn.setOnClickListener(new View.OnClickListener() {
             @Override
