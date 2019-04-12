@@ -17,6 +17,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         //Bus Button
+
         ImageButton busBtn=(ImageButton) findViewById(R.id.busBtn);
         busBtn.setOnClickListener(new View.OnClickListener() {
 

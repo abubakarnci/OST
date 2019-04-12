@@ -19,6 +19,7 @@ public class Bus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus);
         //for footer_bar code
+/*
         ImageButton tfiBtn = (ImageButton) findViewById(R.id.tfiBtn);
         tfiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,14 +33,14 @@ public class Bus extends AppCompatActivity {
 
             }
         });
-
+*/
         //for moving to another activity Bus2
         Button seaBtn = (Button) findViewById(R.id.seaBtn);
         seaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), BusTwo.class);
-                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING", "");
+                startIntent.putExtra("com.example.ost.SOMETHING", "");
                 startActivity(startIntent);
 
                 showGreenToast();
