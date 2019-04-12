@@ -1,14 +1,12 @@
 package com.example.ost;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Bus extends AppCompatActivity {
@@ -19,7 +17,12 @@ public class Bus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus);
         //for footer_bar code
+
+/*
+        ImageButton tfiBtn = (ImageButton) findViewById(R.id.tfiBtn);
+
         /*ImageButton tfiBtn = (ImageButton) findViewById(R.id.tfiBtn);
+
         tfiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,26 +34,31 @@ public class Bus extends AppCompatActivity {
                 }
 
             }
-        });*/
 
-        //for moving to another activity Bus2
-        Button seaBtn = (Button) findViewById(R.id.seaBtn);
-        seaBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), BusTwo.class);
-                startIntent.putExtra("org.metorschools.quicklauncher.SOMETHING", "");
-                startActivity(startIntent);
-
-                showGreenToast();
-
-
-            }
         });
 
 
+    });
+*/
 
-    }
+    //for moving to another activity Bus2
+    Button seaBtn = (Button) findViewById(R.id.seaBtn);
+        seaBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent startIntent = new Intent(getApplicationContext(), BusTwo.class);
+            startIntent.putExtra("com.example.ost.SOMETHING", "");
+            startActivity(startIntent);
+
+            showGreenToast();
+
+
+        }
+    });
+
+
+
+}
     //code to display custom toast
     private void showGreenToast(){
         LayoutInflater inflater=getLayoutInflater();
