@@ -15,16 +15,6 @@ public class BusTwo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus_two);
 
-        //for moving to another activity Web Bus
-        ImageButton webBtn =(ImageButton) findViewById(R.id.webBtn);
-        webBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startIntent=new Intent(getApplicationContext(), WebBus.class);
-                startIntent.putExtra("com.example.ost.SOMETHING","");
-                startActivity(startIntent);
-            }
-        });
 
 
 
