@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Bus extends AppCompatActivity {
     //private RequestQueue queue;
-    Button seaBtn;
+    //Button seaBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
