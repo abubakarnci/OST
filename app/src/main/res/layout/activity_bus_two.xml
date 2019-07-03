@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.173" />
 
-    <ListView
+    <TextView
         android:id="@+id/listView"
         android:layout_width="422dp"
         android:layout_height="438dp"
@@ -73,8 +73,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
 
-        android:background="@color/red"
-        android:textColor="#ff0000"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/footer2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"

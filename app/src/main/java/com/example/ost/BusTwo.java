@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -39,8 +40,12 @@ public class BusTwo extends AppCompatActivity {
         setContentView(R.layout.activity_bus_two);
         final OkHttpClient clint = new OkHttpClient();
         mQueue = Volley.newRequestQueue(this);
-        final TextView headTV=(TextView) findViewById(R.id.headTV);
-        final TextView busTV=(TextView) findViewById(R.id.busTV);
+
+
+        final TextView listView = (TextView) findViewById(R.id.listView);
+
+        final TextView headTV = (TextView) findViewById(R.id.headTV);
+        final TextView busTV = (TextView) findViewById(R.id.busTV);
 
         if (getIntent().hasExtra("com.example.ost.SOMETHING")) {
 
@@ -64,9 +69,12 @@ public class BusTwo extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
 
+
                         jsonParse();
-                    }
-                    else {
+
+
+
+                    } else {
                         headTV.setText("        Dublin Bus");
                         busTV.setText("Something wrong. Please try again");
 
@@ -78,17 +86,17 @@ public class BusTwo extends AppCompatActivity {
 
         }
 
+
+
+
+
+
     }
-
-
-
-
 
     private void jsonParse() {
 
         String input = getIntent().getExtras().getString("com.example.ost.SOMETHING");
         final String url = "https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=" + input + "&format=json";
-
 
 
         JsonObjectRequest request = new JsonObjectRequest(com.android.volley.Request.Method.GET, url, null,
@@ -98,33 +106,38 @@ public class BusTwo extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
 
                         try {
-                            ListView listView=(ListView)findViewById(R.id.listView);
 
-                            final TextView busTV=(TextView) findViewById(R.id.busTV);
-                            final TextView infoTV=(TextView) findViewById(R.id.infoTV);
-                            final TextView headTV=(TextView) findViewById(R.id.headTV);
 
+                            final TextView busTV = (TextView) findViewById(R.id.busTV);
+                            final TextView infoTV = (TextView) findViewById(R.id.infoTV);
+                            final TextView headTV = (TextView) findViewById(R.id.headTV);
+                            final TextView listView = (TextView) findViewById(R.id.listView);
 
 
                             headTV.setText("        Dublin Bus");
-                            int number=response.getInt("stopid");
-                            String time=response.getString("timestamp");
-                            String massage=response.getString("errormessage");
-
-
+                            int number = response.getInt("stopid");
+                            String time = response.getString("timestamp");
+                            String massage = response.getString("errormessage");
 
 
                             //subTV.setText(" Total Stands  Available Stands  Available Bikes");
                             //infoTV.setText("  "+tStands+"                "+aStands+"                  "+aBikes);
-                            busTV.setText("Stop Number: "+number+"\nTime: "+time+"\nStatus: "+massage);
+                            busTV.setText("Stop Number: " + number + "\nTime: " + time + "\nStatus: " + massage);
 
                             JSONArray array = response.getJSONArray("results");
 
-                            JSONObject info=array.getJSONObject(0);
+                            JSONObject info = array.getJSONObject(0);
+                            for(int i =0; i< array.length();i++) {
 
-                            infoTV.setText("Bus   Destination                                  Time");
+                                JSONObject stationData = array.getJSONObject(i);
+                                String bus = stationData.getString("route");
+                                String destination = stationData.getString("destination");
+                                String min = stationData.getString("duetime");
 
 
+                                infoTV.setText("  Bus        Destination                         Time");
+                                listView.append("  "+bus+"           "+destination+"                          "+min+" min\n");
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -144,8 +157,9 @@ public class BusTwo extends AppCompatActivity {
 
 
 
+
+
+
     }
-
-
 
 }
